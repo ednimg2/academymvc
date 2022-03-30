@@ -1,26 +1,12 @@
-<html>
-<?php include 'components/header.php'; ?>
-<body>
-    <div>
-        <?php
-            $url = (isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/')
-                ? explode('/', trim($_SERVER['REQUEST_URI'], '/'))
-                : ['home'];
+<?php
 
-            $page = $url[0];
+require 'src/libraries/Application.php';
+require 'src/libraries/Controller.php';
+require 'src/libraries/View.php';
+require 'src/controllers/HomeController.php';
+require 'src/controllers/PostController.php';
+require 'src/controllers/AboutController.php';
+require 'src/controllers/LoginController.php';
+require 'src/controllers/NotFoundController.php';
 
-            switch ($page) {
-                case 'home':
-                    include 'page/home.php';
-                    break;
-                case 'post':
-                    include 'page/post.php';
-                    break;
-                default:
-                    include 'page/error.php';
-            }
-        ?>
-    </div>
-    <?php include 'components/footer.php'; ?>
-</body>
-</html>
+$app = new Application();
