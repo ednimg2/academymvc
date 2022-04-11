@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Controller;
+
+use App\Libraries\Controller;
+
 class LoginController extends Controller
 {
     public function index()
