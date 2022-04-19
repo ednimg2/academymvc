@@ -6,6 +6,10 @@
         }
     },
     "require": {
-        "php": "^7.4"
+        "php": "^7.4|^8.1",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
     }
 }
